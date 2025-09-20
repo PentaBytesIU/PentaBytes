@@ -20,7 +20,6 @@ We aim to develop an interactive website that visualizes disease patterns and th
 - **Symptom Analysis**: Most common symptoms frequency and severity calculator
 - **Tobacco Risk Assessment**: Comprehensive health risks associated with tobacco use
 - **Heat-Related Deaths**: State-wise analysis of heat-related illnesses
-- **Life Expectancy Trends**: Historical data visualization for India
 
 ### 🔍 Disease Database
 - Searchable database of 41+ diseases
@@ -36,7 +35,7 @@ We aim to develop an interactive website that visualizes disease patterns and th
 
 ## 🛠️ Technology Stack
 
-### Frontend
+### Frontend and Backend
 - **HTML5** - Semantic markup and structure
 - **CSS3** - Modern styling with Flexbox/Grid
 - **JavaScript (ES6+)** - Interactive functionality
@@ -118,7 +117,6 @@ PentaBytes/
 ### Health Indicators
 - **41+ Diseases** tracked and analyzed
 - **28+ States** covered across India
-- **Life Expectancy** trends (2000-2021)
 - **Mortality Patterns** by gender and cause
 - **Tobacco Risk** assessment and statistics
 
@@ -169,7 +167,6 @@ PentaBytes/
 - **Gender differences** exist in mortality patterns and risk factors
 
 ### Health Trends
-- **Life expectancy** has shown consistent improvement over the past two decades
 - **Tobacco use** remains a significant health risk factor
 - **Heat-related illnesses** vary significantly across Indian states
 
