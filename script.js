@@ -1,4 +1,4 @@
-// Global variables
+
 let currentSelectedDisease = null;
 let femaleChart = null;
 let maleChart = null;
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Initialize all components
+
     initializeTabs();
     initializeCharts();
     initializeDiseaseSearch();
@@ -59,7 +59,7 @@ function initializeTabs() {
     });
 }
 
-// Initialize charts
+
 function initializeCharts() {
     createFemaleChart();
     createMaleChart();
@@ -274,7 +274,7 @@ function initializeDiseaseSearch() {
 
     if (!searchInput || !diseaseList || !diseaseDetails) return;
 
-    // Render initial disease list
+
     renderDiseaseList(diseases);
 
     // Search functionality
@@ -418,7 +418,7 @@ function calculateSeverity() {
     let totalSeverity = 0;
     let matchedSymptoms = 0;
     
-    // Sample severity weights (you can expand this with your actual data)
+
     const severityWeights = {
         'vomiting': 4,
         'high_fever': 7,
@@ -492,7 +492,7 @@ function calculateSeverity() {
     result.className = `result show ${severityClass}`;
 }
 
-// Scroll effects
+
 function initializeScrollEffects() {
     const navbar = document.querySelector('.navbar');
     
@@ -521,7 +521,7 @@ function initializeScrollEffects() {
     });
 }
 
-// Utility functions
+
 function debounce(func, wait) {
     let timeout;
     return function executedFunction(...args) {
@@ -534,11 +534,11 @@ function debounce(func, wait) {
     };
 }
 
-// Handle resize events
 window.addEventListener('resize', debounce(() => {
     // Resize charts if they exist
     if (femaleChart) femaleChart.resize();
     if (maleChart) maleChart.resize();
     if (symptomsChart) symptomsChart.resize();
     if (heatChart) heatChart.resize();
+
 }, 250));
