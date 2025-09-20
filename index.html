@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthData India - Public Health Analytics</title>
+    <meta name="description" content="Comprehensive health data analytics platform for India">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <div class="logo">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                    </svg>
+                    <span>HealthData India - Pentabytes</span>
+                </div>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#overview" class="nav-link">Overview</a>
+                <a href="#mortality" class="nav-link">Mortality</a>
+                <a href="#symptoms" class="nav-link">Symptoms</a>
+                <a href="#tobacco" class="nav-link">Tobacco</a>
+                <a href="#disease-search" class="nav-link">Disease Search</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Public Health Analytics for India</h1>
+                <p class="hero-subtitle">Comprehensive data insights on diseases, mortality patterns, and health trends across Indian states</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">41</div>
+                        <div class="stat-label">Diseases Tracked</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">28+</div>
+                        <div class="stat-label">States Covered</div>
+                    </div>
+                </div>
+                <button class="cta-button" onclick="scrollToSection('overview')">
+                    Explore Data
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section id="overview" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Health Overview</h2>
+                <p class="section-description">Key health indicators and statistics</p>
+            </div>
+            <div class="grid grid-4">
+                <div class="card">
+                    <div class="card-icon health">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                        </svg>
+                    </div>
+                    <h3>Life Expectancy</h3>
+                    <div class="metric">69.7 years</div>
+                    <p id="change">Average life expectancy in India (2021)</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon warning">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 6v6l4 2"/>
+                        </svg>
+                    </div>
+                    <h3>Disease Categories</h3>
+                    <div class="metric">41</div>
+                    <p id="change">Different diseases analyzed</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon success">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    <h3>Coverage</h3>
+                    <div class="metric">Pan-India</div>
+                    <p id="change">Comprehensive state coverage</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mortality Analysis -->
+    <section id="mortality" class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Mortality Analysis</h2>
+                <p class="section-description">Leading causes of death by gender</p>
+            </div>
+            <div class="tabs-container">
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="female">Female Mortality</button>
+                    <button class="tab-btn" data-tab="male">Male Mortality</button>
+                </div>
+                <div class="tab-content active" id="female-tab">
+                    <div class="grid grid-2">
+                        <div class="card">
+                            <h3>Top Causes - Female Deaths</h3>
+                            <canvas id="femaleChart"></canvas>
+                        </div>
+                        <div class="card">
+                            <h3>Key Insights</h3>
+                            <div class="insights">
+                                <div class="insight-item">
+                                    <div class="insight-number">28.1%</div>
+                                    <div class="insight-text">Cardiovascular Disease</div>
+                                </div>
+                                <div class="insight-item">
+                                    <div class="insight-number">11.2%</div>
+                                    <div class="insight-text">Respiratory Infections</div>
+                                </div>
+                                <div class="insight-item">
+                                    <div class="insight-number">7.4%</div>
+                                    <div class="insight-text">Stroke</div>
+                                </div>
+                            </div>
+                            <p class="insight-note">Non-communicable diseases account for over 60% of female deaths in India.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-content" id="male-tab">
+                    <div class="grid grid-2">
+                        <div class="card">
+                            <h3>Top Causes - Male Deaths</h3>
+                            <canvas id="maleChart"></canvas>
+                        </div>
+                        <div class="card">
+                            <h3>Key Insights</h3>
+                            <div class="insights">
+                                <div class="insight-item">
+                                    <div class="insight-number">26.4%</div>
+                                    <div class="insight-text">Cardiovascular Disease</div>
+                                </div>
+                                <div class="insight-item">
+                                    <div class="insight-number">10.9%</div>
+                                    <div class="insight-text">Chronic Respiratory</div>
+                                </div>
+                                <div class="insight-item">
+                                    <div class="insight-number">4.8%</div>
+                                    <div class="insight-text">Road Injuries</div>
+                                </div>
+                            </div>
+                            <p class="insight-note">Males show higher rates of injury-related deaths and smoking-related diseases.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Symptoms Analysis -->
+    <section id="symptoms" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Symptom Analysis</h2>
+                <p class="section-description">Most common symptoms and severity assessment</p>
+            </div>
+            <div class="grid grid-2">
+                <div class="card">
+                    <h3>Top Symptoms Frequency</h3>
+                    <canvas id="symptomsChart"></canvas>
+                </div>
+                <div class="card">
+                    <h3>Symptom Severity Calculator</h3>
+                    <div class="calculator">
+                        <label for="symptom-input">Enter symptoms (comma-separated):</label>
+                        <textarea id="symptom-input" placeholder="e.g., fever, headache, vomiting"></textarea>
+                        <button onclick="calculateSeverity()" class="calc-btn">Calculate Severity</button>
+                        <div id="severity-result" class="result"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tobacco Analysis -->
+    <section id="tobacco" class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Tobacco Risk Analysis</h2>
+                <p class="section-description">Health risks associated with tobacco use</p>
+            </div>
+            <div class="grid grid-3">
+                <div class="card risk-card cardiovascular">
+                    <div class="risk-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                        </svg>
+                    </div>
+                    <h3>Cardiovascular Risk</h3>
+                    <div class="risk-stat">2-4x</div>
+                    <p>Increased risk of heart disease</p>
+                    <ul class="risk-list">
+                        <li>Coronary heart disease</li>
+                        <li>Stroke (50% higher risk)</li>
+                        <li>Peripheral vascular disease</li>
+                    </ul>
+                </div>
+                <div class="card risk-card respiratory">
+                    <div class="risk-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                        </svg>
+                    </div>
+                    <h3>Respiratory Risk</h3>
+                    <div class="risk-stat">15-30x</div>
+                    <p>Higher lung cancer risk</p>
+                    <ul class="risk-list">
+                        <li>Lung cancer</li>
+                        <li>COPD development</li>
+                        <li>Reduced lung function</li>
+                    </ul>
+                </div>
+                <div class="card risk-card general">
+                    <div class="risk-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                    </div>
+                    <h3>Other Health Risks</h3>
+                    <div class="risk-stat">Multiple</div>
+                    <p>Various health impacts</p>
+                    <ul class="risk-list">
+                        <li>Multiple cancer types</li>
+                        <li>Reproductive health issues</li>
+                        <li>Immune system suppression</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Heat Deaths Chart -->
+            <br />
+            <br />
+            <div class="card">
+                <h3>Heat-Related Deaths by State</h3>
+                <canvas id="heatChart"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- Disease Search -->
+    <section id="disease-search" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Disease Database</h2>
+                <p class="section-description">Search and explore disease information</p>
+            </div>
+            <div class="search-container">
+                <div class="search-box">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"/>
+                        <path d="m21 21-4.35-4.35"/>
+                    </svg>
+                    <input type="text" id="disease-search-input" placeholder="Search diseases, symptoms, or treatments...">
+                </div>
+            </div>
+            <div class="search-results">
+                <div class="disease-list" id="disease-list">
+                    <!-- Disease items will be populated here -->
+                </div>
+                <div class="disease-details" id="disease-details">
+                    <div class="empty-state">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                            <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+                            <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+                        </svg>
+                        <h3>Select a disease</h3>
+                        <p>Choose from the list to view detailed information</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                        </svg>
+                        <span>HealthData India - Pentabytes</span>
+                    </div>
+                    <p id="cha">Comprehensive health analytics platform providing insights into disease patterns and public health trends across India.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Data Sources</h4>
+                    <ul>
+                        <li id="cha">Ministry of Health & Family Welfare</li>
+                        <li id="cha">WHO Global Health Observatory</li>
+                        <li id="cha">National Health Survey Data</li>
+                        <li id="cha">Academic Research Publications</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>About</h4>
+                    <p id="cha">Project aimed to justify our topic: Data Visualization --- "Visualizing Disease Trends across India: A Data - Driven Approach"
+                        <br />Built with ❤️ by:
+                        <br />1. Kamran Rizvi
+                        <br />2. Arshil Masood
+                        <br />3. Abdullah Ansari
+                        <br />4. Ayushmaan Vaibhav
+                        <br />5. Ghazi Haider
+                        <br />
+                        <br />B.Tech CSE (DSAI-A)
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p id="cha">&copy; 2025 HealthData India - Pentabytes. Educational Project for Academic Research.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
