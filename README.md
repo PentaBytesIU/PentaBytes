@@ -9,7 +9,7 @@
 **HealthData India** is a comprehensive public health analytics platform that visualizes disease patterns, mortality trends, and health indicators across India. This interactive web application provides data-driven insights to raise public awareness about health trends through clear and accessible data storytelling.
 
 ### 🎯 Project Mission
-*"Visualizing Disease Trends across India: A Data-Driven Approach"*
+*"Visualizing Disease Trends across India: A Data-Driven Approach"* 
 
 We aim to develop an interactive website that visualizes disease patterns and their spread, while raising public awareness through clear and accessible data storytelling.
 
