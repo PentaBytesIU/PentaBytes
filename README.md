@@ -134,8 +134,8 @@ PentaBytes/
 - Data preprocessing and feature engineering
 
 ### 💻 **Arshil Masood** - Full Stack Developer
-- Backend development and data processing
-- Database design and API development
+- Frontend and Backend development 
+- Database design and data processing
 - Full-stack integration and deployment
 
 ### 🎨 **Abdullah Ansari** - Frontend Developer
