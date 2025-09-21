@@ -643,7 +643,7 @@ canvas {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .nav-menu {
         position: fixed;
         top: 70px;
@@ -677,6 +677,14 @@ canvas {
 
     .search-results {
         grid-template-columns: 1fr;
+    }
+
+    #ch1{
+        margin-left: 2%;
+    }
+
+    #ch2{
+        margin-left: 4%;
     }
 
     .container {
@@ -728,4 +736,5 @@ canvas {
 
 #cha{
     color: white;
+
 }
