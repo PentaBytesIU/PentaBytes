@@ -1,4 +1,4 @@
-# HealthData India - Public Health Analytics Platform
+# HealthData India - Public Health Analytics Platform 
 
 ![HealthData India](https://img.shields.io/badge/Health-Analytics-blue?style=for-the-badge&logo=health&logoColor=white)
 ![Data Visualization](https://img.shields.io/badge/Data-Visualization-green?style=for-the-badge&logo=chart.js&logoColor=white)
